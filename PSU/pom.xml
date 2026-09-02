@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>SE411lab4</groupId>
+  <artifactId>PSU</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+<name>PSU</name>
+<description>This project is a JavaFX desktop application developed for the SE411 course.</description>
+<url>https://github.com/Fahadd2/SE411_mylabs</url>
+
+<licenses>
+    <license>
+        <name>Apache License 2.0</name>
+        <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+</licenses>
+
+<organization>
+    <name>SE411-Tech-Company</name>
+    <url>https://github.com/Fahadd2</url>
+</organization>
+
+<developers>
+    <developer>
+        <name>Fahad Alharbi</name>
+        <email>222110987@psu.com</email>
+    </developer>
+</developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+ 
+<dependency>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-controls</artifactId>
+          <version>23</version>
+    </dependency>
+
+
+ </dependencies>
+ 
+ 
+ <build>
+<plugins>
+<plugin>
+ <groupId>org.openjfx</groupId>
+          <artifactId>javafx-maven-plugin</artifactId>
+          <version>0.0.8</version>
+          <configuration>
+               <mainClass>se411.psu.App</mainClass>
+          </configuration>
+</plugin>
+
+</plugins>
+</build>
+</project>
