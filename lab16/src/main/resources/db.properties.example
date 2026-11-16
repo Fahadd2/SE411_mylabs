@@ -1,0 +1,5 @@
+# Copy this file to db.properties (same folder) and replace the values with the
+# connection details from your Aiven MySQL service page (Overview tab).
+spring.datasource.url=jdbc:mysql://YOUR-SERVICE.aivencloud.com:PORT/se411db?sslMode=REQUIRED
+spring.datasource.username=avnadmin
+spring.datasource.password=YOUR_AIVEN_PASSWORD

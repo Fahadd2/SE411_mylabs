@@ -32,3 +32,9 @@ A Product web API with Spring Boot 4.1.2, Spring Data JDBC and an H2 in-memory d
 
 ## Lab 14: Spring CRUD
 A Course web API with Spring Boot 4.0.5 and all CRUD operations (POST, GET, PUT, DELETE) with the designed status codes (201, 200, 204, 400, 404, 422) and POST validation. See `lab14/README.md` for the API table and Postman test requests. Run with `mvn clean spring-boot:run` inside `lab14/`.
+
+## Lab 15: Spring CRUD with MySQL
+The lab 14 Course API moved from the H2 in-memory database to MySQL on Aiven (MySQL driver, `AUTO_INCREMENT` schema, `spring.sql.init.mode=always`). The Aiven connection details go in `lab15/src/main/resources/db.properties`, which is git-ignored so the password stays off GitHub. See `lab15/README.md` for setup and the PutMan test requests.
+
+## Lab 16: Spring Security introduction
+The lab 15 API protected with Spring Security: a `WebSecurityConfig` with form login, BCrypt passwords, two in-memory users (`usera` with role USER, `admin` with role ADMIN), a public `/`, `/dashboard` for USER and `/admindashboard` for ADMIN. See `lab16/README.md` for logging in from PutMan with the CSRF token.
