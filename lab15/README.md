@@ -1,6 +1,6 @@
 # Lab 15: Spring CRUD with MySQL
 
-My lab 14 Course API (same endpoints, status codes and validation), moved from the H2 in-memory database to a MySQL server on Aiven.
+My lab 14 Course API (same endpoints, status codes and validation), moved from the H2 in-memory database to a MySQL server.
 
 ## What changed from lab 14
 
@@ -12,18 +12,19 @@ My lab 14 Course API (same endpoints, status codes and validation), moved from t
 
 The Java code is the same as lab 14 (only the package name changed).
 
-## Connecting to your Aiven database
+## Connecting to MySQL
 
-The connection details are **not** in `application.properties`, so the Aiven password never gets pushed to GitHub. They go in `src/main/resources/db.properties`, which is in `.gitignore`:
+The connection details are **not** in `application.properties`, so the database password never gets pushed to GitHub. They go in `src/main/resources/db.properties`, which is in `.gitignore`. Copy `db.properties.example` (same folder) to `db.properties` and fill it in.
 
-1. On Aiven, create the free MySQL service and, in the **Databases** tab, the database `se411db`.
-2. Copy `src/main/resources/db.properties.example` to `src/main/resources/db.properties`.
-3. Fill in the host, port and password from the service's **Overview** page:
-   ```properties
-   spring.datasource.url=jdbc:mysql://YOUR-SERVICE.aivencloud.com:PORT/se411db?sslMode=REQUIRED
-   spring.datasource.username=avnadmin
-   spring.datasource.password=YOUR_AIVEN_PASSWORD
-   ```
+**Local MySQL (used here):** Aiven no longer offers a free MySQL plan (only paid plans with a 30-day trial), so the lab runs on a MySQL 8 server installed on the computer:
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/se411db?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=YOUR_MYSQL_ROOT_PASSWORD
+```
+`createDatabaseIfNotExist=true` creates the `se411db` database on the first run.
+
+**Aiven (or any cloud MySQL):** use the commented lines in `db.properties.example` with the host, port and password from the service's **Overview** page. The code does not change, only these three lines.
 
 Without `db.properties` the app stops at startup with an error saying the file does not exist.
 
@@ -48,4 +49,4 @@ For POST and PUT, set the body to JSON (`Content-Type: application/json`). Send 
 | 9 | `DELETE /api/v1/courses/7` | | 204 |
 | 10 | `DELETE /api/v1/courses/7` | | 404 |
 
-After these, the MySQL client in VS Code shows the same rows in the `course` table, which proves the data is in MySQL and not in memory.
+After these, a MySQL client (MySQL Workbench, or the MySQL extension in VS Code) shows the same rows in the `course` table, which proves the data is in MySQL and not in memory.

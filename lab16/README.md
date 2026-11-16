@@ -1,10 +1,10 @@
 # Lab 16: Spring Security introduction
 
-My lab 15 Course API (MySQL on Aiven), protected with Spring Security, plus three HTML pages from the starting code: `/` (public), `/dashboard` (role USER) and `/admindashboard` (role ADMIN).
+My lab 15 Course API (MySQL), protected with Spring Security, plus three HTML pages from the starting code: `/` (public), `/dashboard` (role USER) and `/admindashboard` (role ADMIN).
 
 ## Setup
 
-Same database setup as lab 15: copy `src/main/resources/db.properties.example` to `db.properties` and fill in your Aiven host, port and password (the file is in `.gitignore`). Run with `mvn clean spring-boot:run` or Run As → Spring Boot App.
+Same database setup as lab 15: copy `src/main/resources/db.properties.example` to `db.properties` and fill in your MySQL root password (the file is in `.gitignore`). It uses the local MySQL server by default; for Aiven, use the commented lines instead. Run with `mvn clean spring-boot:run` or Run As → Spring Boot App.
 
 ## What was added
 
