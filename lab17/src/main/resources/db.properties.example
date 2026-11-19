@@ -1,0 +1,14 @@
+# Copy this file to db.properties (same folder) and fill in your password.
+# db.properties is in .gitignore, so the password never reaches GitHub.
+
+# Option 1: MySQL installed on your own computer (free, no account needed).
+# createDatabaseIfNotExist creates se411db on the first run.
+spring.datasource.url=jdbc:mysql://localhost:3306/se411db?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=YOUR_MYSQL_ROOT_PASSWORD
+
+# Option 2: a cloud MySQL server such as Aiven. Use these lines instead of the
+# ones above, with the host, port and password from the service's Overview page.
+#spring.datasource.url=jdbc:mysql://YOUR-SERVICE.aivencloud.com:PORT/se411db?sslMode=REQUIRED
+#spring.datasource.username=avnadmin
+#spring.datasource.password=YOUR_AIVEN_PASSWORD

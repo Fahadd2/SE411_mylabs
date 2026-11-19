@@ -38,3 +38,6 @@ The lab 14 Course API moved from the H2 in-memory database to MySQL (MySQL drive
 
 ## Lab 16: Spring Security introduction
 The lab 15 API protected with Spring Security: a `WebSecurityConfig` with form login, BCrypt passwords, two in-memory users (`usera` with role USER, `admin` with role ADMIN), a public `/`, `/dashboard` for USER and `/admindashboard` for ADMIN. See `lab16/README.md` for logging in from PutMan with the CSRF token.
+
+## Lab 17: Spring Security with users in a database and JWT
+The lab 15 Course API secured with Spring Security: users in a MySQL `users` table with BCrypt-hashed passwords, a stateless filter chain with HTTP Basic, `POST /register` and `POST /login`, and JWT authentication (`Authorization: Bearer <token>`) through a custom `JwtFilter`. See `lab17/README.md` for the test results and the answers to the three questions.
